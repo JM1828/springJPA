@@ -6,8 +6,9 @@
         xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_2_0.xsd"
         version="2.0">
 
+    <!-- "nickname" 파라미터를 사용하여 comment 테이블에서 닉네임으로 댓글을 검색 -->
     <named-native-query
-            name="Comment.findByNickname"
+            name="CommentRepository.findByNickname"
             result-class="com.example.firstproject.entity.Comment">
         <query>
             <![CDATA[

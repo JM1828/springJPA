@@ -19,7 +19,9 @@ public interface CommentRepository extends JpaRepository<Comment, Long> {
     @Query(value =
             "SELECT * " +
             "FROM comment " +
+            // JPA 를 통해 articleId로 댓글을 검색
             "WHERE article_id = :articleId",
+            // 이 옵션이 true 로 설정되면, 해당 쿼리가 네이티브 SQL 쿼리임을 나타냄,
             nativeQuery = true)
     List<Comment> findByArticleId(Long articleId);
 
